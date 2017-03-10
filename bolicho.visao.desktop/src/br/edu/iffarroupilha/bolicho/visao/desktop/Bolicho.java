@@ -19,6 +19,7 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
  * @author Usuario
  *
  */
+
 public class Bolicho extends JFrame {
 	public Bolicho() {
 		setTitle("::Bolicho::");
@@ -32,6 +33,7 @@ public class Bolicho extends JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+						
 		setVisible(true);
 	}
 private void desenhaComponentes() {
@@ -61,7 +63,7 @@ private void desenhaComponentes() {
 			
 			
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(Bolicho.this,"Ola");
+				new FrmCliente(Bolicho.this);
 				
 			}
 		} );
@@ -69,7 +71,7 @@ private void desenhaComponentes() {
 			
 			
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(Bolicho.this,"certo"
+				JOptionPane.showMessageDialog(Bolicho.this,"o que vender"
 						);
 				
 			}
