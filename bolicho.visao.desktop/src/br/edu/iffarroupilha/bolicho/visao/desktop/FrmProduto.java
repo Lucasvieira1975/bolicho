@@ -30,7 +30,7 @@ public class FrmProduto  extends JFrame{
 		JLabel jblPreco = new JLabel("Preco");
 		JTextField jtfDescricao =new JTextField(30);
 		JTextField jtfPreco = new JTextField(30);
-		JButton gtnGravar = new JButton("Gravar");
+		JButton btnGravar = new JButton("Gravar");
 		
 		setLayout(new FlowLayout());
 		
