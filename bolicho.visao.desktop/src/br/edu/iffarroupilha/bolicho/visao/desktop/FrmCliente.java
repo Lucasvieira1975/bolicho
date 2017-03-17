@@ -2,7 +2,6 @@ package br.edu.iffarroupilha.bolicho.visao.desktop;
 
 import java.awt.FlowLayout;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;

@@ -55,7 +55,7 @@ private void desenhaComponentes() {
 			
 		
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(Bolicho.this,"Voce clicou");
+				new FrmProduto(Bolicho.this);
 				
 			}
 		} );
