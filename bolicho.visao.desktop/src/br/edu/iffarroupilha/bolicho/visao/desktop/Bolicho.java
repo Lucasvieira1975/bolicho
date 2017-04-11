@@ -12,75 +12,85 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-/**
+/*
  * <p>
- * classe principal do projeto, contempla classe inicial
- * </p>
- * @author Usuario
- *
+ * Classe principal do projeto, contempla tela inicial
+ *</p> 
  */
-
 public class Bolicho extends JFrame {
+	
 	public Bolicho() {
-		setTitle("::Bolicho::");
+		
+		setTitle(":: Bolicho ::");
 		setSize(640,480);
-		setLocationRelativeTo(null);		
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		desenhaComponentes();
+		// muda a aparencia da aplicação java
 		try {
-			UIManager.setLookAndFeel(new NimbusLookAndFeel());
+			UIManager.setLookAndFeel( new NimbusLookAndFeel());
 		} catch (UnsupportedLookAndFeelException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-						
 		setVisible(true);
 	}
-private void desenhaComponentes() {
-	//cria a barra de menus
+	
+	private void desenhaComponentes() {
+		
+		// cria bara de menus
 		JMenuBar menu = new JMenuBar();
-		// cria menu cadastro
+		
+		// cria o menu cadastro
 		JMenu cadastro = new JMenu("Cadastro");
-		// cria os sub itens
 		menu.add(cadastro);
+		
+		// cria os sub-itens
 		JMenuItem cliente = new JMenuItem("Clientes");
 		JMenuItem produto = new JMenuItem("Produtos");
 		JMenuItem venda = new JMenuItem("Vendas");
-		//vincula ao menu cadastro
+		
+		//vincula ao menu cadastros
 		cadastro.add(cliente);
 		cadastro.add(produto);
 		cadastro.add(venda);
-		//vincula as açoes aos itens
+		
+		//vincula as ações aos itens
 		cliente.addActionListener( new ActionListener() {
 			
-		
-			public void actionPerformed(ActionEvent e) {
-				new FrmProduto(Bolicho.this);
+			public void actionPerformed(ActionEvent arg0) {
 				
-			}
-		} );
-		produto.addActionListener( new ActionListener() {
-			
-			
-			public void actionPerformed(ActionEvent e) {
 				new FrmCliente(Bolicho.this);
 				
 			}
-		} );
-              venda.addActionListener( new ActionListener() {
-			
+		});
+		
+		produto.addActionListener( new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(Bolicho.this,"o que vender"
-						);
+				
+				new FrmProduto(Bolicho.this);
 				
 			}
-		} );
+		});
 		
-		//adiciona o menu em tela
+		venda.addActionListener( new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+				JOptionPane.showMessageDialog(Bolicho.this, "Venda");
+				
+			}
+		});
+		
+		
+		// adiciona o menu em tela
 		setJMenuBar(menu);
+		
 	}
-public static void main(String[] args) {
-   new Bolicho();	
-}
+
+	public static void main(String[] args) {
+		
+		new Bolicho();
+	}
 }
